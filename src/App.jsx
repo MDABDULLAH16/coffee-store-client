@@ -1,9 +1,12 @@
+import { Outlet } from "react-router-dom";
 import "./App.css";
+import Header from "./components/Header";
 
 function App() {
   return (
     <div>
-      <h1 className='text-4xl text-center'>Coffee Store CLient</h1>
+      <Header></Header>
+      <Outlet></Outlet>
     </div>
   );
 }
