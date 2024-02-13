@@ -1,16 +1,53 @@
 import React from "react";
 
 const AddCoffee = () => {
+  const handleAddCoffee = (event) => {
+    event.preventDefault();
+
+    const form = event.target;
+    const name = form.name.value;
+    const supplier = form.supplier.value;
+    const category = form.category.value;
+    const chef = form.chef.value;
+    const taste = form.taste.value;
+    const details = form.details.value;
+    const photoURL = form.photoURL.value;
+    const CoffeeDetails = {
+      name,
+      supplier,
+      category,
+      chef,
+      taste,
+      details,
+      photoURL,
+    };
+    console.log(CoffeeDetails);
+    fetch("http://localhost:5000/addCoffee", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(CoffeeDetails),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
+  };
+
   return (
     <div className='container w-3/4  bg-[#F4F3F0] mx-auto p-4'>
-      <h1 className='font-bold text-center text-2xl mt-8'>Add New Coffee</h1>
+      <h1 className='font-bold text-center text-2xl mt-4'>Add New Coffee</h1>
       <p className='m-6'>
         It is a long established fact that a reader will be distraceted by the
         readable content of a page when looking at its layout. The point of
         using Lorem Ipsum is that it has a more-or-less normal distribution of
         letters, as opposed to using Content here.
       </p>
-      <form className='grid  grid-cols-1 md:grid-cols-2 gap-4'>
+      <form
+        onSubmit={handleAddCoffee}
+        className='grid  grid-cols-1 md:grid-cols-2 gap-4'
+      >
         {/* First Column */}
         <div>
           <label
