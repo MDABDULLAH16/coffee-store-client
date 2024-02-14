@@ -1,6 +1,6 @@
 import { data } from "autoprefixer";
 import React, { useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const StoreCoffee = () => {
   const loadedStoredCoffee = useLoaderData();
@@ -27,17 +27,34 @@ const StoreCoffee = () => {
       <h1 className='font-bold text-center text-2xl mt-4'>
         Available Coffee {storedCoffee.length}{" "}
       </h1>
-      <div>
+      <div className='grid grid-cols-3 gap-4'>
         {storedCoffee.map((coffee) => (
-          <div key={coffee._id}>
-            <img width={"500px"} src={coffee.photoURL} alt='' />
-            <h1 className='font-semibold text-2xl'>{coffee.name}</h1>
-            <button
-              className='btn btn-warning'
-              onClick={() => handleDelete(coffee._id)}
-            >
-              Delete Coffee
-            </button>
+          <div className='flex text-center'>
+            <div className='' key={coffee._id}>
+              <img
+                width={"500px"}
+                className='h-3/4'
+                src={coffee.photoURL}
+                alt=''
+              />
+              <h1 className='font-semibold text-2xl'> Name: {coffee.name}</h1>
+              <p>Supplier: {coffee.supplier}</p>
+              <p>Category: {coffee.category}</p>
+              <p>Taste: {coffee.taste}</p>
+              <p>Details: {coffee.details}</p>
+
+              <div className='flex'>
+                <button
+                  className='btn w-1/2 text-white font-bold btn-warning'
+                  onClick={() => handleDelete(coffee._id)}
+                >
+                  Delete Coffee
+                </button>
+                <button className='btn w-1/2 btn-success'>
+                  <Link to={`/updateCoffee/${coffee._id}`}>Update Coffee</Link>
+                </button>
+              </div>
+            </div>
           </div>
         ))}
       </div>
