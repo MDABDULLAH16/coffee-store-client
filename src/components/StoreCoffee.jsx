@@ -41,7 +41,7 @@ const StoreCoffee = () => {
               <p>Supplier: {coffee.supplier}</p>
               <p>Category: {coffee.category}</p>
               <p>Taste: {coffee.taste}</p>
-              <p>Details: {coffee.details}</p>
+              {/* <p>Details: {coffee.details}</p> */}
 
               <div className='flex'>
                 <button

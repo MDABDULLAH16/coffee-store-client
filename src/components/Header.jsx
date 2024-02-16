@@ -20,7 +20,12 @@ const Header = () => {
         >
           Store Coffee
         </Link>
-        <Link className='ml-4 hover:text-orange-400  font-bold '>About Us</Link>
+        <Link to='/users' className='ml-4 hover:text-orange-400  font-bold '>
+          Users
+        </Link>
+        <Link to='/signUp' className='ml-4 hover:text-orange-400  font-bold '>
+          SignUp
+        </Link>
       </div>
     </div>
   );
