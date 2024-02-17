@@ -10,6 +10,7 @@ import UpdateCoffee from "./components/UpdateCoffee.jsx";
 import SignUp from "./components/SignUp.jsx";
 import AuthProvider from "./providers/AuthProvider.jsx";
 import Users from "./components/Users.jsx";
+import Login from "./components/Login.jsx";
 
 const route = createBrowserRouter([
   {
@@ -38,6 +39,10 @@ const route = createBrowserRouter([
       {
         path: "/signUp",
         element: <SignUp></SignUp>,
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
       },
       {
         path: "/users",

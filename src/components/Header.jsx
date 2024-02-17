@@ -23,6 +23,9 @@ const Header = () => {
         <Link to='/users' className='ml-4 hover:text-orange-400  font-bold '>
           Users
         </Link>
+        <Link to='/login' className='ml-4 hover:text-orange-400  font-bold '>
+          Login
+        </Link>
         <Link to='/signUp' className='ml-4 hover:text-orange-400  font-bold '>
           SignUp
         </Link>
