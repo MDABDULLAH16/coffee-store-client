@@ -7,7 +7,8 @@ const StoreCoffee = () => {
   const [storedCoffee, setStoredCoffee] = useState(loadedStoredCoffee);
   const handleDelete = (_id) => {
     console.log(_id);
-    fetch(`http://localhost:5000/storeCoffee/${_id}`, {
+    //vercel link added
+    fetch(`https://coffee-store-server-kv6b.vercel.app/storeCoffee/${_id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

@@ -24,13 +24,16 @@ const UpdateCoffee = () => {
       photoURL,
     };
     console.log(CoffeeDetails);
-    fetch(`http://localhost:5000/updateCoffee/${storedCoffee._id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(CoffeeDetails),
-    })
+    fetch(
+      `https://coffee-store-server-kv6b.vercel.app/updateCoffee/${storedCoffee._id}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(CoffeeDetails),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

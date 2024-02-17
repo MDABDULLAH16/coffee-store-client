@@ -20,7 +20,7 @@ const SignUp = () => {
 
         //user has been created
         const user = { email, creationTime };
-        fetch("http://localhost:5000/user", {
+        fetch("https://coffee-store-server-kv6b.vercel.app/user", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -31,7 +31,11 @@ const SignUp = () => {
           .then((data) => {
             console.log(data);
             if (data.insertedId) {
-              alert("user create done");
+              Swal.fire({
+                title: "success",
+                icon: "success",
+                text: "User Create Successfully",
+              });
             }
           });
       })
